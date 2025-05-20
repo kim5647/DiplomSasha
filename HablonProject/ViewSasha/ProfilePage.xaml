@@ -1,0 +1,163 @@
+﻿<Page x:Class="HablonProject.ViewSasha.ProfilePage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HablonProject.ViewSasha"
+        mc:Ignorable="d"
+        d:DesignHeight="600" d:DesignWidth="800"
+        Title="ProfilePage">
+
+    <Grid Background="#ffffff">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Заголовок страницы -->
+        <Border Grid.Row="0" Background="#f8f8f8" Padding="20" BorderBrush="#e0e0e0" BorderThickness="0,0,0,1">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Мой профиль" 
+                           Foreground="#333333" 
+                           FontSize="18"
+                           FontWeight="SemiBold"/>
+
+                <Button Content="Редактировать" 
+                        Margin="20,0,0,0"
+                        HorizontalAlignment="Right"
+                        Background="Transparent"
+                        BorderBrush="#0066cc"
+                        BorderThickness="1"
+                        Foreground="#0066cc"
+                        Padding="10,5"/>
+            </StackPanel>
+        </Border>
+
+        <!-- Основное содержимое профиля -->
+        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
+            <StackPanel Margin="20">
+                <!-- Информация о пользователе -->
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <!-- Аватар -->
+                    <Border Width="120" Height="120" CornerRadius="60" 
+                            Background="#0066cc" Margin="0,0,20,0">
+                        <TextBlock x:Name="PrefixLable" Text="ИИ" 
+                                   Foreground="White" 
+                                   VerticalAlignment="Center"
+                                   HorizontalAlignment="Center"
+                                   FontSize="32"/>
+                    </Border>
+
+                    <!-- Основная информация -->
+                    <StackPanel Grid.Column="1" VerticalAlignment="Center">
+                        <TextBlock x:Name="FullNameLable" Text="Иванов Иван Иванович" 
+                                   FontSize="20" FontWeight="SemiBold"/>
+                        <TextBlock x:Name="PostionNameLable" Text="Senior Backend Developer" Margin="0,5,0,0" Foreground="#666666"/>
+                        <TextBlock x:Name="DepartmentLable" Text="Отдел: " Margin="0,5,0,0" Foreground="#666666"/>
+                        <TextBlock x:Name="EmailLable" Text="Email: " Margin="0,5,0,0" Foreground="#666666"/>
+                    </StackPanel>
+                </Grid>
+
+                <!-- Разделитель -->
+                <Border Height="1" Background="#e0e0e0" Margin="0,30,0,30"/>
+
+                <!-- Статистика -->
+                <TextBlock Text="Статистика активности" 
+                           FontWeight="SemiBold" 
+                           FontSize="16"
+                           Margin="0,0,0,15"/>
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <!-- Текущие проекты -->
+                    <Border Grid.Column="0" Background="#f8f8f8" CornerRadius="5" Padding="15">
+                        <StackPanel>
+                            <TextBlock x:Name="TuringProgectLable" Text="7" FontSize="24" FontWeight="SemiBold" Foreground="#0066cc"/>
+                            <TextBlock Text="Текущих проектов" Margin="0,5,0,0" Foreground="#666666"/>
+                        </StackPanel>
+                    </Border>
+
+                    <!-- Активные задачи -->
+                    <Border Grid.Column="1" Background="#f8f8f8" CornerRadius="5" Padding="15" Margin="10,0,10,0">
+                        <StackPanel>
+                            <TextBlock x:Name="TasksLable" Text="15" FontSize="24" FontWeight="SemiBold" Foreground="#0066cc"/>
+                            <TextBlock Text="Активных задач" Margin="0,5,0,0" Foreground="#666666"/>
+                        </StackPanel>
+                    </Border>
+
+                    <!-- Завершенные задачи -->
+                    <Border Grid.Column="2" Background="#f8f8f8" CornerRadius="5" Padding="15">
+                        <StackPanel>
+                            <TextBlock x:Name="ComplitLable" Text="42" FontSize="24" FontWeight="SemiBold" Foreground="#0066cc"/>
+                            <TextBlock Text="Завершённых задач" Margin="0,5,0,0" Foreground="#666666"/>
+                        </StackPanel>
+                    </Border>
+                </Grid>
+
+                <!-- График активности -->
+                <TextBlock Text="Активность за последний год" 
+                           FontWeight="SemiBold" 
+                           FontSize="16"
+                           Margin="0,30,0,15"/>
+
+                <Border Background="#f8f8f8" CornerRadius="5" Padding="15">
+                    <StackPanel>
+                        <!-- Календарь активности -->
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <!-- Месяцы -->
+                            <TextBlock Text="Май" Grid.Column="0" FontSize="10" HorizontalAlignment="Center" Foreground="#666666"/>
+                            <TextBlock Text="Июн" Grid.Column="1" FontSize="10" HorizontalAlignment="Center" Foreground="#666666"/>
+                            <TextBlock Text="Июл" Grid.Column="2" FontSize="10" HorizontalAlignment="Center" Foreground="#666666"/>
+                            <TextBlock Text="Авг" Grid.Column="3" FontSize="10" HorizontalAlignment="Center" Foreground="#666666"/>
+                            <TextBlock Text="Сен" Grid.Column="4" FontSize="10" HorizontalAlignment="Center" Foreground="#666666"/>
+                            <TextBlock Text="Окт" Grid.Column="5" FontSize="10" HorizontalAlignment="Center" Foreground="#666666"/>
+                            <TextBlock Text="Ноя" Grid.Column="6" FontSize="10" HorizontalAlignment="Center" Foreground="#666666"/>
+                            <TextBlock Text="Дек" Grid.Column="7" FontSize="10" HorizontalAlignment="Center" Foreground="#666666"/>
+                            <TextBlock Text="Янв" Grid.Column="8" FontSize="10" HorizontalAlignment="Center" Foreground="#666666"/>
+                            <TextBlock Text="Фев" Grid.Column="9" FontSize="10" HorizontalAlignment="Center" Foreground="#666666"/>
+                            <TextBlock Text="Мар" Grid.Column="10" FontSize="10" HorizontalAlignment="Center" Foreground="#666666"/>
+                            <TextBlock Text="Апр" Grid.Column="11" FontSize="10" HorizontalAlignment="Center" Foreground="#666666"/>
+
+                            <!-- Квадраты активности -->
+                            <UniformGrid Grid.Row="1" Columns="12" Rows="3" Margin="0,20,0,0">
+                                <!-- Пример заполнения -->
+                                <Border Background="#ebedf0" Width="12" Height="12" Margin="1" ToolTip="Нет активности"/>
+                                <Border Background="#ebedf0" Width="12" Height="12" Margin="1" ToolTip="Нет активности"/>
+                                <Border Background="#9be9a8" Width="12" Height="12" Margin="1" ToolTip="1 задача"/>
+                                <Border Background="#40c463" Width="12" Height="12" Margin="1" ToolTip="3 задачи"/>
+                                <Border Background="#30a14e" Width="12" Height="12" Margin="1" ToolTip="5 задач"/>
+                                <Border Background="#216e39" Width="12" Height="12" Margin="1" ToolTip="8 задач"/>
+                                <!-- ... и так далее -->
+                            </UniformGrid>
+                        </Grid>
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Page>

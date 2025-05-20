@@ -1,0 +1,21 @@
+﻿<Application x:Class="HablonProject.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:HablonProject"
+             StartupUri="\ViewSasha\AuthView.xaml">
+    <Application.Resources>
+        <Style TargetType="TextBlock" x:Key="TaskPropertyText">
+            <Setter Property="Foreground" Value="#586069"/>
+            <Setter Property="FontSize" Value="13"/>
+        </Style>
+
+        <Style TargetType="Border" x:Key="TaskCardStyle">
+            <Setter Property="Background" Value="#ffffff"/>
+            <Setter Property="CornerRadius" Value="4"/>
+            <Setter Property="BorderBrush" Value="#e1e4e8"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="Padding" Value="10"/>
+        </Style>
+    </Application.Resources>
+</Application>

@@ -1,0 +1,101 @@
+﻿<Window x:Class="HablonProject.ViewSasha.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HablonProject.ViewSasha"
+        mc:Ignorable="d"
+         Title="YLHA" 
+        Height="700" Width="1100"
+        WindowStartupLocation="CenterScreen"
+        FontFamily="Segoe UI">
+
+    <Window.Resources>
+        <!-- Стили для кнопок навигации -->
+        <Style x:Key="NavButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Foreground" Value="#333333"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+            <Setter Property="Padding" Value="15,10"/>
+            <Setter Property="Margin" Value="5,2"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" 
+                                CornerRadius="4">
+                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" 
+                                              VerticalAlignment="Center"
+                                              Margin="{TemplateBinding Padding}"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#f0f0f0"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style x:Key="SelectedNavButtonStyle" BasedOn="{StaticResource NavButtonStyle}" TargetType="Button">
+            <Setter Property="Background" Value="#e1e1e1"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="Foreground" Value="#0066cc"/>
+        </Style>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="220"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Левая панель навигации -->
+        <Border Grid.Column="0" Background="Azure" BorderBrush="#e0e0e0" BorderThickness="0,0,1,0">
+            <StackPanel>
+                <!-- Логотип компании -->
+                <StackPanel Orientation="Horizontal" Margin="15,20,15,30" HorizontalAlignment="Left">
+                    <Rectangle Width="30" Height="30" Fill="#0066cc" RadiusX="4" RadiusY="4"/>
+                    <TextBlock Text="IT Project" 
+                               Foreground="#333333" 
+                               FontSize="18" 
+                               FontWeight="Bold"
+                               Margin="10,0,0,0"
+                               VerticalAlignment="Center"/>
+                </StackPanel>
+
+                <!-- Кнопки навигации -->
+                <Button x:Name="btnProfile" Content="Профиль"
+                        Style="{StaticResource NavButtonStyle}"
+                        Click="NavButton_Click"/>
+
+                <Button x:Name="btnProjects" Content="Проекты"
+                        Style="{StaticResource NavButtonStyle}"
+                        Click="NavButton_Click"/>
+
+
+                <Button x:Name="btnBoard" Content="Задачи"
+                        Style="{StaticResource NavButtonStyle}"
+                        Click="NavButton_Click"/>
+
+                <!-- Разделитель -->
+                <Border Height="1" Background="#e0e0e0" Margin="15,20,15,20"/>
+
+                <!-- Дополнительные элементы -->
+                <Button Content="Настройки"
+                        Style="{StaticResource NavButtonStyle}"/>
+
+                <Button Content="Выход"
+                        Style="{StaticResource NavButtonStyle}"
+                        Margin="0,30,0,0" Click="Button_Click"/>
+            </StackPanel>
+        </Border>
+
+        <!-- Основная область контента -->
+        <Frame x:Name="MainContentFrame" 
+               Grid.Column="1" 
+               NavigationUIVisibility="Hidden"/>
+    </Grid>
+</Window>
