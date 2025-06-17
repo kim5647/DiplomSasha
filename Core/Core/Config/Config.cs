@@ -8,7 +8,7 @@ namespace Core.Core.Config;
 public static class Config
 {
     public const string ConnectionString =
-        @"Data Source=DESKTOP-2FI2USO\SQLEXPRESS; 
+        @"Data Source=DESKTOP-69B4MEK\MSSQLSERVER01; 
           Initial Catalog=IT-company;
           Integrated Security=True;
           TrustServerCertificate=True";
